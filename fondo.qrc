@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>escena.jpg</file>
+        <file>orco.jpg</file>
+        <file>mago.jpg</file>
+        <file>sword_cross_icon_135139.ico</file>
+    </qresource>
+</RCC>
