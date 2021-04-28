@@ -26,6 +26,12 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Old English Text MT</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -42,6 +48,12 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Old English Text MT</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Guerrero</string>
    </property>
@@ -55,11 +67,60 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>200</red>
+         <green>163</green>
+         <blue>71</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>200</red>
+         <green>163</green>
+         <blue>71</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>200</red>
+         <green>163</green>
+         <blue>71</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
+   </property>
+   <property name="font">
+    <font>
+     <family>Old English Text MT</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Mago</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Arquero">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -67,6 +128,12 @@
      <width>91</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Old English Text MT</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Arquero</string>

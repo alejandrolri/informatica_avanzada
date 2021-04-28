@@ -11,5 +11,6 @@
         <file>caballero.png</file>
         <file>castillo.png</file>
         <file>cueva.png</file>
+        <file>fondo_dialogo.png</file>
     </qresource>
 </RCC>

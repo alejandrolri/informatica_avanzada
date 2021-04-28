@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <string>
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,13 +16,22 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    int i=0;
 
 private slots:
     void on_Avanzar_clicked();
+    void on_Atacar_clicked();
+    void on_Huir_clicked();
 
 private:
+    bool pocima;
+    int avanzar = 0;
+    int huir = 0;
+    int atacar = 0;
     void mostrarImagen(int);
+    void protagonista(std::string);
+    void botones_puertas();
+    void botones();
+    void historia();
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

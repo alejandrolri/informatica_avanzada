@@ -21,6 +21,10 @@ public:
 private slots:
     void on_Guerrero_clicked();
 
+    void on_Mago_clicked();
+
+    void on_Arquero_clicked();
+
 private:
     Ui::Dialog *ui;
 };
