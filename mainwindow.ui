@@ -77,7 +77,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Personaje">
+    <property name="geometry">
+     <rect>
+      <x>456</x>
+      <y>310</y>
+      <width>301</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

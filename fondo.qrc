@@ -4,5 +4,12 @@
         <file>orco.jpg</file>
         <file>mago.jpg</file>
         <file>sword_cross_icon_135139.ico</file>
+        <file>tesoro.jpg</file>
+        <file>puertas.png</file>
+        <file>arquero.png</file>
+        <file>brujo.jpg</file>
+        <file>caballero.png</file>
+        <file>castillo.png</file>
+        <file>cueva.png</file>
     </qresource>
 </RCC>

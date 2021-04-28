@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,11 +15,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int i=0;
 
 private slots:
     void on_Avanzar_clicked();
 
 private:
+    void mostrarImagen(int);
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
