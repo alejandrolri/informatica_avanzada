@@ -12,5 +12,8 @@
         <file>castillo.png</file>
         <file>cueva.png</file>
         <file>fondo_dialogo.png</file>
+        <file>lilith.png</file>
+        <file>slime.png</file>
+        <file>hechizo.png</file>
     </qresource>
 </RCC>
