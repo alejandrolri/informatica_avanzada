@@ -12,39 +12,29 @@ class Protagonista{
         ~Protagonista();
         void elegirNombre(string);
         void elegirRol(int);
-        void vida(int); //Dependiendo de la vida, el juego sera mas dificil
-        virtual void atacar(); 
-        virtual void avanzar();
-        virtual void huir();
-        void informacionGeneral(); //Se mostraran las caracteristicas
+        void vida(int); 
 };
 //Clase derivada de Protagonista --> Guerrero
 class Guerrero:public Protagonista{
         int arma;
-        int armadura;
     public:
         Guerrero();
         ~Guerrero();
-        void equiparArma();
-        void equiparArmadura();
+        void AumentarFuerza();
 };
 //Clase derivada de Protagonista --> Mago
-class Mago:public Protagonista{
-        int gremio;
+class Brujo:public Protagonista{
         int tipoMagia;
     public:
-        Mago();
-        ~Mago();
-        void elegirGremio();
+        Brujo();
+        ~Brujo();
         void Magia();
 };
 //Clase derivada de Protagonista --> Arquero
 class Arquero:public Protagonista{
         int arco;
-        int raza;
     public:
         Arquero();
         ~Arquero();
         void equiparArco();
-        void seleccionarRaza();
 };
