@@ -48,6 +48,15 @@ void MainWindow::mostrarImagen(int i)
     case 5 :
         ui->Imagen->setPixmap(QPixmap(":/new/prefix1/tesoro.jpg"));
         break;
+    case 6 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/lilith.png"));
+        break;
+    case 7 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/slime.png"));
+        break;
+    case 8 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/hechizo.png"));
+        break;
     }
 }
 
@@ -100,7 +109,7 @@ void MainWindow::historia()
         pocima = true;
     }
     if(avanzar==3 && atacar==1){
-        mostrarImagen(2);
+        mostrarImagen(7);
         ui->Avanzar->setEnabled(false);
         ui->Atacar->setEnabled(true);
         ui->Huir->setEnabled(false);
@@ -134,16 +143,19 @@ void MainWindow::historia()
     //Puerta 2
     if(atacar==3||(atacar==1 && huir==1))
     {
-        mostrarImagen(5);
+        mostrarImagen(6);
         ui->textEdit->setText("Escoges la puerta número 2 y te encuentras con Lilith, descubres que el hedor que desprende es el mismo que el de la ciudad y que su poder puede ser el causante de la maldición");
         botones();
     }
     //Puerta 3
     if(huir==2||(atacar==2 && huir==1))
     {
-        mostrarImagen(2);
-        ui->textEdit->setText("Eliges la puerta 3 debido a que recuerdas la marca en la cabeza del ogro. Encuentras un arma imbuida en un poder increible y decides remplazarla por la que llevas.");
+        mostrarImagen(8);
+        ui->textEdit->setText("Eliges la puerta 3 debido a que recuerdas la marca en la cabeza del ogro. Un conjuro arcano otorga a tu arma un poder sin igual.");
         botones();
+        ui->Avanzar->setEnabled(true);
+        ui->Atacar->setEnabled(false);
+        ui->Huir->setEnabled(false);
     }
 }
 
