@@ -33,6 +33,12 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Old English Text MT</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Avanzar</string>
     </property>
@@ -49,6 +55,12 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Old English Text MT</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Atacar</string>
     </property>
@@ -64,6 +76,12 @@
       <width>100</width>
       <height>40</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Old English Text MT</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Huir</string>
@@ -106,8 +124,8 @@
     </property>
     <property name="font">
      <font>
-      <family>Baskerville Old Face</family>
-      <pointsize>10</pointsize>
+      <family>Old English Text MT</family>
+      <pointsize>16</pointsize>
      </font>
     </property>
    </widget>
@@ -118,7 +136,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
