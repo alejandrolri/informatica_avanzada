@@ -1,0 +1,57 @@
+
+ui->textEdit->setText("Tu aventura comienza en la ciudad de Morioh, donde el gremio de aventureros te ha llamado para acabar con una maldición que asola la ciudad desde hace siglos.");
+
+
+
+void MainWindow::mostrarImagen(int i)
+{
+    switch (i) {
+    case 1 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/cueva.png"));
+        ui->textEdit->setText("Tras equiparte concienzudamente, decides emprender camino hacia la cueva. Desprende un aura de peligro que te hiela la sangre.\n");
+        break;
+    case 2 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/orco.jpg"));
+        ui->textEdit->setText("De repente escuchas un ruido proveniente del interior, tras avanzar unos metros descubres un orco que te corta el paso. Parece imponente y tiene una marca en el pecho que te resulta curiosa");
+        break;
+    case 3 :
+        ui->textEdit->setText("No puedes avanzar, ya que te corta el paso, solo tienes la opción de luchar o huir");
+        break;
+    case 4 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/tesoro.jpg"));
+        ui->textEdit->setText("Consigues matar al orco en una dura pelea que te deja al borde de la muerte. Al rebuscar entre sus pertenencias descubres dos pociones y una llave. Una de ellas te permite restaurar tu salud por completo.");
+        break;
+    case 5 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/tesoro.jpg"));
+        ui->textEdit->setText("Decides no enfrentarte al orco y huir por un pasaje cercano que te lleva hasta un cofre que contiene una llave.");
+    case 6 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/puertas.png"));
+        ui->textEdit->setText("Descubres que tanto el camino del ogro como el del pasaje cercano conducen a la entrada de una mazmorra con 3 puertas");
+    case 7 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/mago.jpg"));
+        ui->textEdit->setText("Escoges la puerta número 1 y te encuentras con un mago oscuro con un gran poder. Sospechas que puede ser el causante de la maldición en la ciudad.");
+    case 8 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/tesoro.jpg"));
+        ui->textEdit->setText("Consigues derrotarlo y saqueas todo lo que encuentras para hacer constar en el gremio de tu heroica hazaña.");
+    case 9 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/castillo.png"));
+        ui->textEdit->setText("Decides volver a la ciudad y descubres que las malas cosechas, la enfermedad y las tinieblas siguen presentes. Has fallado en tu misión y decides darte por vencido");
+    case 10 :
+        ui->textEdit->setText("Escoges la puerta número 2 y te encuentras con Lilith, descubres que el hedor que desprende es el mismo que el de la ciudad y que su poder puede ser el causante de la maldición. Solo tienes la opción de atacar para poder salir de aquí con vida. ");
+    case 11 :
+        ui->textEdit->setText("Con tu poder actual te ves incapaz de salir con vida y mueres tras una ardua batalla.");
+    case 12 :
+        ui->textEdit->setText("Eliges la puerta 3 debido a que recuerdas... .Encuentras un arma imbuida en un poder increible y decides remplazarla por la que llevabas.");
+    case 13 :
+        ui->textEdit->setText("Tras unos cuantos metros encuentras a Lilith,descubres que el hedor que desprende es el mismo que el de la ciudad y que su poder puede ser el causante de la maldición");
+    case 14 :
+        ui->textEdit->setText("Te sientes muy poderoso con tu nuevo arma y peleas a muerte, hasta que en un punto de la batalla Lilith está a punto de matarte. De repente una luz ciega a Lilith y eso consigue salvarte.");
+    case 15 :
+        ui->textEdit->setText("Una de las pociones que te quedaba tras derrotar al orco se ha iluminado. Decides tomarla y consigues curarte y aumentar tu poder. Esto te permite acabar con Lilith y con la maldición de la ciudad.");
+    case 16 :
+        ui->Imagen->setPixmap(QPixmap(":/new/prefix1/castillo.png"));
+        ui->textEdit->setText("Regresas al gremio de aventureros y te reciben como un héroe, has acabado con la maldición de la ciudad que asolaba sus cosechas, traía enfermedad y penurias. La niebla y el aspecto tenebroso de la ciudad ha desaparecido.");
+    case 17 :
+        ui->textEdit->setText("Te sientes muy poderoso con tu nuevo arma y peleas a muerte, hasta que en un punto de la batalla Lilith desata todo su poder y te acorrala hasta matarte.");
+}
+}
