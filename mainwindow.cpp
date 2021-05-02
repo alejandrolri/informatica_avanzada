@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
     //Diálogo selección
     Dialog d;
     d.exec();
-    //Imagen del personaje
-    protagonista(d.personaje);
-
+    //Imagen y creación del personaje
+    eleccion(d.personaje);
+    ui->progressBar->setValue(protagonista.vida);
 }
 
 MainWindow::~MainWindow()
@@ -60,14 +60,19 @@ void MainWindow::mostrarImagen(int i)
     }
 }
 
-void MainWindow::protagonista(std::string personaje)
+void MainWindow::eleccion(std::string personaje)
 {
- if(personaje=="guerrero")
+ if(personaje=="guerrero"){
      ui->Personaje->setPixmap(QPixmap(":/new/prefix1/caballero.png"));
- else if (personaje=="mago")
+     }
+ else if (personaje=="mago"){
      ui->Personaje->setPixmap(QPixmap(":/new/prefix1/brujo.jpg"));
- else if (personaje=="arquero")
+ }
+ else if (personaje=="arquero"){
      ui->Personaje->setPixmap(QPixmap(":/new/prefix1/arquero.png"));
+ }
+ else
+     ui->Personaje->setPixmap(QPixmap(":/new/prefix1/huevo.png"));
 }
 
 void MainWindow::botones_puertas()
@@ -101,6 +106,8 @@ void MainWindow::historia()
     //Orco
     if(atacar==1 && huir==0)
     {
+        protagonista.salud(20);
+        ui->progressBar->setValue(protagonista.vida);
         mostrarImagen(2);
         ui->Avanzar->setEnabled(true);
         ui->Atacar->setEnabled(false);
@@ -115,6 +122,8 @@ void MainWindow::historia()
         ui->textEdit->setText("Justo después te encuentras con un slime gigante bastante inofensivo. Decides atacar. Dichosos bichos, están por todo el reino");
     }
     if(atacar==2){
+        protagonista.salud(5);
+        ui->progressBar->setValue(protagonista.vida);
         mostrarImagen(3);
         ui->Avanzar->setEnabled(true);
         ui->Atacar->setEnabled(true);
@@ -142,25 +151,28 @@ void MainWindow::historia()
         ui->Huir->setEnabled(false);
     }
     if((avanzar==4 && atacar==3)||(avanzar==3 && huir==1 && atacar==1 )){
+        protagonista.salud(40);
+        ui->progressBar->setValue(protagonista.vida);
         mostrarImagen(5);
         ui->textEdit->setText("Consigues derrotarlo y saqueas todo lo que encuentras para hacer constar en el gremio de tu heroica hazaña");
         ui->Avanzar->setEnabled(true);
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
     }
-    if((avanzar==5)||(avanzar==4 && huir==1 && atacar==1 ))
+    if((avanzar==5 && huir==0)||(avanzar==4 && huir==1 && atacar==1 ))
     {
         ui->Imagen->setPixmap(QPixmap(":/new/prefix1/castillo.png"));
-        ui->textEdit->setText("Decides volver a la ciudad y descubres que las malas cosechas, la enfermedad y las tinieblas siguen presentes. Has fallado en tu misión y decides darte por vencido. FINAL 1");
+        ui->textEdit->setText("Decides volver a la ciudad y descubres que las malas cosechas, la enfermedad y las tinieblas siguen presentes. Has fallado en tu misión y decides darte por vencido.");
         ui->Avanzar->setEnabled(false);
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
+        final(1);
     }
 
     //Puerta 2
     if((avanzar==3 && atacar==3)||(avanzar==2 && atacar==1 && huir==1))
     {
-        mostrarImagen(5);
+        mostrarImagen(6);
         ui->textEdit->setText("Escoges la puerta número 2 y te encuentras con Lilith, descubres que el hedor que desprende es el mismo que el de la ciudad y que su poder puede ser la causante de la maldición. Solo tienes la opción de atacar para poder salir de aquí con vida");
         botones();
         ui->Avanzar->setEnabled(false);
@@ -169,11 +181,14 @@ void MainWindow::historia()
     }
     if((avanzar==3 && atacar==4)||(avanzar==2 && atacar==2 && huir==1))
     {
-        mostrarImagen(5);
-        ui->textEdit->setText("Con tu poder actual te ves incapaz de salir con vida y mueres tras una ardua batalla. FINAL 2");
+        protagonista.vida = 0;
+        ui->progressBar->setValue(protagonista.vida);
+        mostrarImagen(6);
+        ui->textEdit->setText("Con tu poder actual te ves incapaz de salir con vida y mueres tras una ardua batalla.");
         ui->Avanzar->setEnabled(false);
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
+        final(1);
     }
 
     //Puerta 3
@@ -196,11 +211,14 @@ void MainWindow::historia()
     }
     if(huir==2 && avanzar==3 && atacar==1)
     {
+        protagonista.vida = 0;
+        ui->progressBar->setValue(protagonista.vida);
         mostrarImagen(6);
-        ui->textEdit->setText("Te sientes muy poderoso con tu nuevo arma y peleas a muerte, hasta que en un punto de la batalla Lilith desata todo su poder y te acorrala hasta matarte. FINAL 3");
+        ui->textEdit->setText("Te sientes muy poderoso con tu nuevo arma y peleas a muerte, hasta que en un punto de la batalla Lilith desata todo su poder y te acorrala hasta matarte.");
         ui->Avanzar->setEnabled(false);
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
+        final(1);
     }
     if(avanzar==4 && atacar==3 && huir==1){
         mostrarImagen(6);
@@ -209,7 +227,9 @@ void MainWindow::historia()
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
     }
-    if(avanzar==5 && atacar==3 && huir==1){
+    if(avanzar==5 && atacar==3 && huir==1) {
+        protagonista.salud(74);
+        ui->progressBar->setValue(protagonista.vida);
         mostrarImagen(6);
         ui->textEdit->setText("Una de las pociones que te quedaba tras derrotar al orco se ha iluminado. Decides tomarla y consigues curarte y aumentar tu poder. Esto te permite acabar con Lilith y con la maldición de la ciudad.");
         ui->Avanzar->setEnabled(true);
@@ -217,14 +237,15 @@ void MainWindow::historia()
         ui->Huir->setEnabled(false);
     }
     if(avanzar==6 && atacar==3 && huir==1){
+        protagonista.vida = 100;
+        ui->progressBar->setValue(protagonista.vida);
         ui->Imagen->setPixmap(QPixmap(":/new/prefix1/castillo.png"));
-        ui->textEdit->setText("Regresas al gremio de aventureros y te reciben como un héroe, has acabado con la maldición de la ciudad que asolaba sus cosechas, traía enfermedad y penurias. La niebla y el aspecto tenebroso de la ciudad ha desaparecido. FINAL VERDADERO");
+        ui->textEdit->setText("Regresas al gremio de aventureros y te reciben como un héroe, has acabado con la maldición de la ciudad que asolaba sus cosechas, traía enfermedad y penurias. La niebla y el aspecto tenebroso de la ciudad ha desaparecido.");
         ui->Avanzar->setEnabled(false);
         ui->Atacar->setEnabled(false);
         ui->Huir->setEnabled(false);
+        final(0);
     }
-
-
 }
 
 void MainWindow::on_Atacar_clicked()
@@ -242,4 +263,11 @@ void MainWindow::on_Avanzar_clicked()
 {
     avanzar++;
     historia();
+}
+
+void MainWindow::final(int i){
+    Final v;
+    if (i==1)
+        v.texto();
+    v.exec();
 }

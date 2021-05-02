@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <string>
 #include "dialog.h"
+#include "final.h"
+#include "protagonista.hpp"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,15 +25,16 @@ private slots:
     void on_Huir_clicked();
 
 private:
-    bool pocima;
+    Protagonista protagonista;
     int avanzar = 0;
     int huir = 0;
     int atacar = 0;
     void mostrarImagen(int);
-    void protagonista(std::string);
+    void eleccion(std::string);
     void botones_puertas();
     void botones();
     void historia();
+    void final(int);
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

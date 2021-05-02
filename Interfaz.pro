@@ -10,15 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     dialog.cpp \
+    final.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    protagonista.cpp
 
 HEADERS += \
     dialog.h \
-    mainwindow.h
+    final.h \
+    mainwindow.h \
+    protagonista.hpp
 
 FORMS += \
     dialog.ui \
+    final.ui \
     mainwindow.ui
 
 # Default rules for deployment.

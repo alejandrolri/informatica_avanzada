@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "protagonista.hpp"
 
 #include <QApplication>
 
